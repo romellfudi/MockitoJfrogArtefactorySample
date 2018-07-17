@@ -21,7 +21,13 @@ Primero verificamos que esten sus pruebas unitarias de la libraría funcionando 
 
 ## Upload library/api
 
-En la ruta de nuestro proyecto Android, connectamos los plugins del JFrog Artefactory, en el gradle build del módulo api añadimos en el top:
+En la ruta de nuestro proyecto Android, connectamos los plugins del JFrog Artefactory:
+
+```gradle
+classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
+```
+
+En el gradle build del módulo api añadimos en el top:
 
 ```gradle
 apply plugin: 'com.android.library'
