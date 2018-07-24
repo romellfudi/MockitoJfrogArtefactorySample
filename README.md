@@ -4,10 +4,10 @@
 
 Comenzemos primero configurando nuestro entorno de pruebas.
 
-[![center](snapshot/mockito.png)](https://github.com/mockito/mockito)
+[![center](snapshot/Mockito.png)](https://github.com/mockito/mockito/)
 
 
-![center](snapshot/jfrog.png)
+[![center](snapshot/jfrog.png)](https://jfrog.com/artifactory/)
 
 ## Run test cases
 
