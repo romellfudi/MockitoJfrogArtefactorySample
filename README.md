@@ -1,6 +1,7 @@
 # Mockito Sample Project
 
 ### by Romell Domínguez
+[![](snapshot/icono.png)](https://www.romellfudi.com/)
 
 Comenzemos primero configurando nuestro entorno de pruebas.
 
