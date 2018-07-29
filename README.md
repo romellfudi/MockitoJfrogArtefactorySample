@@ -12,13 +12,21 @@ Comenzemos primero configurando nuestro entorno de pruebas.
 
 ## Run test cases
 
+<style>
+img[src*='#center'] { 
+    width:500px;
+    display: block;
+    margin: auto;
+}
+</style>
+
 Primero verificamos que esten sus pruebas unitarias de la libraría funcionando correctamente:
 
-![center](snapshot/d.png)
+![center](snapshot/d.png#center)
 
-![center](snapshot/c.png)
+![center](snapshot/c.png#center)
 
-![center](snapshot/b.png)
+![center](snapshot/b.png#center)
 
 ## Upload library/api
 
@@ -89,23 +97,23 @@ Desde una terminal arrancamos el repositorio de aplicaciones
 
 Una vez acabado su configuración se lanzará en el puerto 8081 (si desea cambiarlo usar el archivo tomcat/conf/server.xml)
 
-![center](snapshot/i.png)
+![center](snapshot/i.png#center)
 
-![center](snapshot/a.png)
+![center](snapshot/a.png#center)
 
 Nos pedirá crear un password
 
-![center](snapshot/e.png)
+![center](snapshot/e.png#center)
 
 El tipo de arqitectura del repositorio (para nosotros maven)
 
-![center](snapshot/f.png)
+![center](snapshot/f.png#center)
 
-![center](snapshot/g.png)
+![center](snapshot/g.png#center)
 
 Obtendremos por fin nuestro dashboard del repositorio de apis:
 
-![center](snapshot/h.png)
+![center](snapshot/h.png#center)
 
 Ahora si enviamos nuestra versión al repositorio de apis mediante los siguientes comandos en el terminal
 
@@ -118,9 +126,9 @@ Ahora si enviamos nuestra versión al repositorio de apis mediante los siguiente
 
 En el panel-menu buscamos la librería
 
-![center](snapshot/k.png)
+![center](snapshot/k.png#center)
 
-![center](snapshot/l.png)
+![center](snapshot/l.png#center)
 
 Acá visualizamos el Group ID: fudi.freddy.api, el Artifact ID: api, y la versión: 1.0.a.
 
