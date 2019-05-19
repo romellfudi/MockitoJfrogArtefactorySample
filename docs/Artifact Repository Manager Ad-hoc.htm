@@ -1,0 +1,268 @@
+
+
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Artifact Repository Manager  Ad-hoc</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/static/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab title="Artifact Repository Manager  Ad-hoc"
+                  id="https://github.com/romellfudi/MockitoJfrogArtefactorySample"
+                  environment="web"
+                  feedback-link="https://github.com/romellfudi/MockitoJfrogArtefactorySample/issues">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <h2 is-upgraded><strong>Objetivo</strong></h2>
+<p>Muy frecuentemente los desarrollos de aplicaciones móviles se vuelven muy difíciles de mantener puesto los desarrollos muchas veces utilizan librerías ad-hocs recicladas.</p>
+<h2 is-upgraded><strong>Depencencias</strong></h2>
+<p>Comenzamos primero configurando nuestro entorno de pruebas.</p>
+<p class="image-container"><img style="width: 160.00px" src="https://lh6.googleusercontent.com/yUDxmVb2e5ikNjg3sNK5DoFC2QimgB0xOaJmkZOZr9K8CrBVC1l8wqCDXsggG6lKdartgHtnUnq7WI2EzZ25EThdLk4PwJYSoro4-O_e0QW1fFvOa39mzxwJx4D5Csy9LuGiRXqe"></p>
+<p><a href="https://jfrog.com/open-source/" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Artifactory Community</paper-button></a></p>
+<p>Una vez descargado y instalado en nuestro servidor o en el mejor de los casos usar Docker:</p>
+<p class="image-container"><img style="width: 336.00px" src="https://lh5.googleusercontent.com/z5sdeGIOK5K3UeyCvEJ8mJitdhwM2vnkhMxs6yYfI7VHLplanyEFQVIW0mXlBb-tD5PaTpTX__Ff-sC9FnR5SdaPcKJFCx3oAYZsIPwMb-iAH-PLcGktr2YfGHuu6ktOgjOgge6O"></p>
+<p><a href="https://jfrog.com/partner/docker/" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download Docker Artifactory</paper-button></a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Getting set up" duration="0">
+        <p>Para ello expongo en este sencillo tutorial una manera eficiente de tener un repositorio de artefactos software in-home, con Jfrog - Artefactory.</p>
+<h2 is-upgraded><strong>Download the Code</strong></h2>
+<p>Click en el link de descarga para obtener el código base de este tutorial:</p>
+<p><a href="https://github.com/romellfudi/MockitoJfrogArtefactorySample/archive/master.zip" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download source code</paper-button></a></p>
+<h2 class="checklist" is-upgraded><strong>What you&#39;ll learn</strong></h2>
+<ul class="checklist">
+<li>Cómo instalar un repositorio de librerías de software libre</li>
+<li>Cómo desplegar librerías jar y aar en un repositorio</li>
+<li>Cómo acceder a nuestras librerías de nuestro repositorio</li>
+</ul>
+<h2 is-upgraded><strong>What you&#39;ll need</strong></h2>
+<ul>
+<li>Android Studio <code>2.+</code> .</li>
+<li><a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb" target="_blank">Web Server for Chrome</a>, o nuestro navegador favorito</li>
+<li><a href="https://github.com/romellfudi/MockitoJfrogArtefactorySample/archive/master.zip" target="_blank">The sample code</a></li>
+<li>Tener un instalador <a href="https://jfrog.com/open-source/" target="_blank"><code>Jfrog</code></a> o usar contenedores <a href="https://jfrog.com/partner/docker/" target="_blank"><code>Docker</code></a></li>
+<li>Conocimientos básicos de Gradle &amp; Android</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Testing" duration="0">
+        <h2 is-upgraded><strong>Run test cases</strong></h2>
+<p>Primero verificamos que estén sus pruebas unitarias de la librería funcionando correctamente:</p>
+<h2 is-upgraded><strong>Comprobamos las dependencias</strong></h2>
+<p class="image-container"><img style="width: 432.00px" src="https://lh3.googleusercontent.com/lmBvPmnGAINye8k1eO48iWQIMmwzLEXXeGs2cgoogCmtVxT77qQSWN9V8Tjv2k5ug-AUNdtT-TedNY6o6GpZNoQvivXuiwnJjLfQOu9ZQb1Ni9VTsr24-0YRY8CTZ1xzmA0VEk_3"></p>
+<h2 is-upgraded>Ejecutamos las pruebas</h2>
+<h2 is-upgraded><img style="width: 486.07px" src="https://lh3.googleusercontent.com/UIdX5-S1eVQcRxoUzMVaa7_ko5rU9y--AhOCah25aj6HKahVy0qp1ya1Q1gFSY7_iPFR9QZ9f-KPJEasjH6Lnft5Mu1TlwEPyX9QCQsOiwIbBHKnf1y3-1JmmKA9Nxt9B3TigcFl"></h2>
+<p>Vemos nuestros resultados en consola o mediante <a href="https://www.sonarqube.org/" target="_blank">SonarQube</a>.</p>
+<p class="image-container"><img style="width: 624.00px" src="https://lh5.googleusercontent.com/G3Kav7S4ucaEfNB9J0NOXtuCLA37JLBJJMRmYbRAcB8V5swaB0VKMAUDUEx0_qh1Bb8QgsWq1OljmDEiv2EGuxd4T-JWgI7zIgD2Q6Ynzn3UamZzpfsqno0KT5QnWXHxD6FnZTia"></p>
+<aside class="special"><p>Pruebas exitosas? Entonces ya nos encontramos listos para compartir nuestra librería..</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Upload library/api" duration="0">
+        <p>En la ruta de nuestro proyecto Android, conectamos los plugins del JFrog Artefactory:</p>
+<pre><code>classpath &#34;org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1&#34;</code></pre>
+<p>En el gradle build del módulo api añadimos en el top:</p>
+<pre><code>apply plugin: &#39;com.android.library&#39;
+apply plugin: &#39;com.jfrog.artifactory&#39;
+apply plugin: &#39;maven-publish&#39;</code></pre>
+<p>Definimos variables constantes:</p>
+<pre><code>def packageName = &#39;fudi.freddy.api&#39;
+def libraryVersion = &#39;1.0.a&#39;</code></pre>
+<p>Sobre escribimos el task publishing del motor <a href="https://docs.gradle.org/current/userguide/maven_plugin.html" target="_blank">Gradlew</a>:</p>
+<pre><code>publishing {
+   publications {
+       aar(MavenPublication) {
+           groupId packageName
+           version = libraryVersion
+           artifactId project.getName()
+           // Preparamos la librería *.aar, ojo al usar flavors
+           (&#34;$buildDir/outputs/aar/${project.getName()}-release.aar&#34;)
+       }
+   }
+}</code></pre>
+<p>Creamos un task para empaquetar, se puede configurar hasta niveles de <a href="https://developer.android.com/studio/build/build-variants" target="_blank">flavors</a>:</p>
+<pre><code>artifactory {
+   contextUrl = &#39;http://localhost:8081/artifactory&#39;
+   publish {
+       repository {
+           // Access keys to repo
+           repoKey = &#39;libs-release-local&#39;
+           username = &#34;admin&#34;
+           password = &#34;123qweASD&#34;
+       }
+       defaults {
+           // which artifacts should be published
+           publications(&#39;aar&#39;)
+           publishArtifacts = true
+
+           properties = [&#39;qa.level&#39;: &#39;basic&#39;, &#39;dev.team&#39;: &#39;core&#39;]
+           // Publish generated POM files
+           publishPom = true
+       }
+   }
+}</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Upload Artifacts" duration="0">
+        <p>Desde una terminal arrancamos el repositorio de aplicaciones:</p>
+<ul>
+<li><strong>Windows</strong> - mediante el executable *&#34;artefactoryService.exe&#34;*.</li>
+<li><strong>MAC / Ubuntu</strong> - Mediante el batch &#34;artefactory.sh&#34;</li>
+</ul>
+<p>Una vez acabado su configuración se lanzará en el puerto 8081 (si desea cambiarlo usar el archivo <code>tomcat/conf/server.xml</code>)</p>
+<p class="image-container"><img style="width: 432.00px" src="https://lh3.googleusercontent.com/7N_cL8vZwwG6-ZurB-41YsgrjQkWncHB52HF-UvzTbknzePpPkr0Y5BBz1VSdQqbAW2w0DYPqrgEpJoxuxxqGglMUqNwQoJpsKW2O_3kbTO9PLyAUSFybX4XTzjcTh5rHW9dQYEG"></p>
+<p class="image-container"><img style="width: 624.00px" src="https://lh6.googleusercontent.com/SVJDDWu99692FAnxH0mErxglIRyVqNtQ24lioVioF2FtJx28UPpNCt1LuR3LFPhJLe6muAQ_O1TRSNk_aW9u0RrEd436ukCTX7JB3bcwKdGcLkd7WklRiby8kX-waTJ-f__i1-b4"></p>
+<aside class="special"><p>Listo ya tenemos nuestro repositorio en <a href="http://localhost:8081" target="_blank">localhost:8081</a> (puerto por defecto).</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Repository Configuration" duration="0">
+        <p>Nos pedirá crear un password de seguridad de acceso, como en la mayoría de servidores podremos configurar más adelante</p>
+<p class="image-container"><img style="width: 624.00px" src="https://lh5.googleusercontent.com/TdqPoY-xbXxAveLK2b4_RG3bpv0OAdz9oKkyzG_J-9Ivm5YoJlGVy7SeLMd7vVoiscVUdYp-RRckDe52iob3nHCAIK_CvyiuD2N57rnEogA3KRVfrfs2oW28CU8jgysoSxiCgMvb"></p>
+<p>El tipo de arquitectura del repositorio (para nosotros <a href="https://maven.apache.org/download.cgi" target="_blank">maven</a>):</p>
+<p class="image-container"><img style="width: 624.00px" src="https://lh4.googleusercontent.com/5e5GCwizy4qjCfHTaps8K4qyNeIdRPyF6rXXmhjBNJRZlAklMSi1mX_ief2yENLve2s2rICCRjYKT1A9KCZ6j_NExdZvB6t3ZIzzbUMJxlYsqU9s_Htq_CsTQXExRUgylJAMsnYm"></p>
+<p class="image-container"><img style="width: 624.00px" src="https://lh4.googleusercontent.com/Y_QvQEN08Z6J8hZWKv2SEYcOc32quxL4nFwmn2h03DBRKWCg-D4MsgD55DFMIi9ShirlFVOghY_h4zy7u6TceAd3oAaXvNMqbdnFoWy_2CMijxZ4wgkmZ8fvFC67seTPunKZOqlz"></p>
+<p>Obtendremos por fin nuestro dashboard del repositorio de apis:</p>
+<p class="image-container"><img style="width: 624.00px" src="https://lh4.googleusercontent.com/Zn8sP_HuAIWpUCXVV8Dc1Hkbw5Bs3w-RzV-ZRmsxJovxy9Unna13Qxr84-rw97NUlZEi2i5DeG15HtmJRo_UXooo2ML1F0id3QBZM6gCROBoHb07IVDQ3jgdIjO4J3gGmcUviTyF"></p>
+<aside class="warning"><p><strong>Alerta:</strong> En caso no se pueda llegar hasta este punto, validar las versiones usadas con su sistema operativo.</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Upload Library" duration="0">
+        <p>Ahora enviamos nuestra versión al repositorio de apis mediante los siguientes comandos en el terminal</p>
+<pre><code># construimos la libraría
+./gradlew clean build
+# construimos el artefacto con su interfaz, su respectivo archivo pom y enseguida lo publicamos en el repositorio
+./gradlew assembleRelease generatePomFileForAarPublication artifactoryPublish</code></pre>
+<p>En el panel-menu del Artifactory buscamos la librería:</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>En JFrog-Artefactory, podremos configurar y mantener todos nuestros artefactos como también nuestros permisos de accesos. Nuestro panel:</p>
+<ul>
+<li>Panel de Inicio.</li>
+<li>Listado de artefactos..</li>
+<li>Paquetes específicos</li>
+<li>Búsqueda de todos los artefactos en todos nuestros grupos.</li>
+<li>Nuestro logs de construcciones</li>
+<li>Administración de accesos..</li>
+</ul>
+</td><td colspan="1" rowspan="1"><p class="image-container"><img style="width: 287.00px" src="https://lh3.googleusercontent.com/Avm8wX8qasjixme_Nz2Z1ouc-MhEaJ3YRiIHsRTeezlYElchS0i-_kIme0pEa7aY10jOqxciD8TsH4vSzzPyhnyXJtdmRE15vnFpdM6wWP9cgGgcTA0xrN34ElomHY4IWiaDI5O0"></p>
+</td></tr>
+</table>
+<h2 is-upgraded><strong>Listado de artefactos</strong></h2>
+<p class="image-container"><img style="width: 624.00px" src="https://lh4.googleusercontent.com/saqz2apF4MHsUldf4xfH5YaQOLfUeGiF_9cVPSnBWJqSLXIkVPD38VC-WFpmdBXAdukK7FvXeEmMRkg-eUv9-RceEw5TEEbf5EMjbD9zMWsE4HFd2mEc1lsnJ72EZ1_TeSh2u5v6"></p>
+<p>Acá se podrá visualizar el Group ID: <code>fudi.freddy.api</code>, el Artifact ID: <code>api</code>, y la correspondiente versión: <code>1.0.a</code>.</p>
+<aside class="special"><p>Listo la librería ya se encuentra compartida dentro de nuestro repositorio.</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Download library/api" duration="0">
+        <p>De esta manera puede ser usada en cualquier proyecto dentro de la organización como cualquier librería de maven, lo primero es determinar de dónde va a obtener las apis.</p>
+<p>Dentro de la configuración de la aplicación direccionamos el repositorio maven:</p>
+<pre><code>repositories {
+    maven { url &#34;http://localhost:8081/artifactory/libs-release-local&#34; }
+}</code></pre>
+<p>y cambiamos la dependencia de nuestra librería a la del repositorio:</p>
+<pre><code>//compile project(&#39;:api&#39;)
+compile &#39;fudi.freddy.api:api:1.0.a&#39;</code></pre>
+<aside class="special"><p>Ya podremos utilizar todas nuestras, cambiar de versiones y utilizarlas en cualquier momento para todos nuestros proyectos.</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="License" duration="0">
+        <h2 is-upgraded><strong>by Romell Domínguez</strong></h2>
+<p class="image-container"><img style="width: 287.00px" src="https://lh3.googleusercontent.com/uNpiInxE2f5uABK9E2n3b2PLquwkm0yYP5UpMexsWvaKU-KicIcjcbMscKDmNVBd9EIUaK8U45PTn4_uGRVfT9x3AIuV2UdxNDizEp2lJvlhOhfR2V4XVFyLZALWSEju3QaIslIX"></p>
+<p>Copyright 2018 Romell D.Z.</p>
+<p>Licensed under the Apache License, Version 2.0 (the &#34;License&#34;); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>
+<p>http://www.apache.org/licenses/LICENSE-2.0</p>
+<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &#34;AS IS&#34; BASIS,</p>
+<p>WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</p>
+<p>See the License for the specific language governing permissions and limitations under the License.</p>
+
+
+      </google-codelab-step>
+    
+
+    
+
+  </google-codelab>
+
+  <script async>
+    document.addEventListener("DOMContentLoaded", function() {
+      var pubBtn = document.getElementById('publishButton');
+      var pubForm = document.getElementById('publishForm');
+      var pubStatus = document.getElementById('publishButtonStatus');
+
+      pubForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        pubBtn.disabled = true;
+        pubStatus.textContent = '';
+        pubStatus.classList.remove('success');
+        pubStatus.classList.remove('error');
+
+        var req = new XMLHttpRequest();
+
+        var onError = function() {
+          var msg = 'Request failed';
+          if (req.statusText) {
+            msg += ' with status "' + req.statusText + '"';
+          }
+          if (req.responseText) {
+            msg += ': ' + req.responseText;
+          }
+          pubStatus.classList.add('error');
+          pubStatus.textContent = msg;
+          pubBtn.disabled = false;
+        };
+
+        req.addEventListener('load', function() {
+          if (req.status != 200) {
+            onError();
+            return;
+          }
+          pubStatus.textContent = ('Publication request submitted' +
+            ' (reload preview to re-publish)');
+          pubStatus.classList.add('success');
+        });
+        req.addEventListener('error', onError);
+        req.addEventListener('abort', onError);
+        req.open("post", pubForm.action);
+        req.send(new FormData(pubForm));
+      });
+    });
+  </script>
+
+  <script src="/static/native-shim.js"></script>
+  <script src="/static/custom-elements.min.js"></script>
+  <script src="/static/prettify.js"></script>
+  <script src="/static/codelab-elements.js"></script>
+</body>
+</html>
