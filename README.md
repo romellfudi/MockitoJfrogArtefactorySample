@@ -17,7 +17,7 @@ Before running, check the testing units work correctly and each case runs withou
 
 ![center](snapshot/b.png#center)
 
-## Upload library/api
+## Upload library|api
 
 In the path of the android project, add the JFrog Artefactory plug, adding the following statement:
 
@@ -56,7 +56,7 @@ publishing {
 }
 ```
 
-Create a task for packing, you could configure it for your flavor levels
+Create a task for packaging, you could configure it for your flavor levels
 ```gradle
 artifactory {
     contextUrl = 'http://localhost:8081/artifactory'
