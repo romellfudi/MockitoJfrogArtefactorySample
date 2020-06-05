@@ -1,26 +1,15 @@
-# Mockito Sample Project
+# Mockito Android Project
 
 ### by Romell Domínguez
 [![](snapshot/icono.png)](https://www.romellfudi.com/)
 
-Comenzemos primero configurando nuestro entorno de pruebas.
+First at all, begin configuring our testing environment.
 
 [![center](snapshot/Mockito.png)](https://github.com/mockito/mockito/)
-
-
 [![center](snapshot/jfrog.png)](https://jfrog.com/artifactory/)
 
 ## Run test cases
-
-<style>
-img[src*='#center'] { 
-    width:500px;
-    display: block;
-    margin: auto;
-}
-</style>
-
-Primero verificamos que esten sus pruebas unitarias de la libraría funcionando correctamente:
+Before running, check the testing units work correctly and each case runs without any error & exceptions:
 
 ![center](snapshot/d.png#center)
 
@@ -30,13 +19,13 @@ Primero verificamos que esten sus pruebas unitarias de la libraría funcionando 
 
 ## Upload library/api
 
-En la ruta de nuestro proyecto Android, connectamos los plugins del JFrog Artefactory:
+In the path of the android project, add the JFrog Artefactory plug, adding the following statement:
 
 ```gradle
 classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
 ```
 
-En el gradle build del módulo api añadimos en el top:
+Next, add the plugins for your library module into gradle file, `artifactory-plug` is to make and update the packaging artifact, and `maven-plug`  to publish into a maven-central repository:
 
 ```gradle
 apply plugin: 'com.android.library'
@@ -44,14 +33,14 @@ apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
 ```
 
-Definimos varibles constantes:
+Defining variables: name and number of the library
 
 ```gradle
 def packageName = 'fudi.freddy.api'
 def libraryVersion = '1.0.a'
 ```
 
-Sobreescribimos el task publishing del motor Gradlew:
+Overwrite the `publish gradle task`, which you set the GrooupId, version, and path of the library
 
 ```gradle
 publishing {
@@ -60,14 +49,14 @@ publishing {
             groupId packageName
             version = libraryVersion
             artifactId project.getName()
-            // Preparamos la librería *.aar, ojo al usar flavors
+            // Packaging the *.aar, be careful with flavours  
             ("$buildDir/outputs/aar/${project.getName()}-release.aar")
         }
     }
 }
 ```
 
-Creamos un tesk para empaquetar, se puede cofigurar hasta niveles de flavors:
+Create a task for packing, you could configure it for your flavor levels
 ```gradle
 artifactory {
     contextUrl = 'http://localhost:8081/artifactory'
@@ -91,54 +80,54 @@ artifactory {
 }
 ```
 
-Desde una terminal arrancamos el repositorio de aplicaciones
-* Windows: mediante el executable *"artefactoryService.exe"*
+In terminal, start running JFrog-Artefactory
+* Windows: run statement *"artefactoryService.exe"*
 * MAC / Ubuntu: mediante el batch "artefactory.sh" 
 
-Una vez acabado su configuración se lanzará en el puerto 8081 (si desea cambiarlo usar el archivo tomcat/conf/server.xml)
+Once finish configuring, the server runs by dfault in port 8081 (you could change in tomcat/conf/server.xml)
 
 ![center](snapshot/i.png#center)
 
 ![center](snapshot/a.png#center)
 
-Nos pedirá crear un password
+Will set up the password server 
 
 ![center](snapshot/e.png#center)
 
-El tipo de arqitectura del repositorio (para nosotros maven)
+We choose the architecture that we need to deploy (`maven` in this case)
 
 ![center](snapshot/f.png#center)
 
 ![center](snapshot/g.png#center)
 
-Obtendremos por fin nuestro dashboard del repositorio de apis:
+Displaying a dashboard, we could start working the apis repository
 
 ![center](snapshot/h.png#center)
 
-Ahora si enviamos nuestra versión al repositorio de apis mediante los siguientes comandos en el terminal
+Now send the artefact to the apis repository using the following commands
 
 ```sh
-# construimos la libraría
+# build the packaging
 ./gradlew clean build
-# construimos el artefacto con su interfaz, su respectivo archivo pom y enseguida lo publicamos en el repositorio
+# Having built correctky, the artefact, which has pom file and documentation, is going to be deployed in the server
 ./gradlew assembleRelease generatePomFileForAarPublication artifactoryPublish 
 ```
 
-En el panel-menu buscamos la librería
+In the menu, we can see the publishing library
 
 ![center](snapshot/k.png#center)
 
 ![center](snapshot/l.png#center)
 
-Acá visualizamos el Group ID: fudi.freddy.api, el Artifact ID: api, y la versión: 1.0.a.
+Here, the dashboard shows the group ID: fudi.freddy.api, Artifact ID: api and version: 1.0.a.
 
 ## Download library/api
 
-De esta manera puede ser usada en cualquier proyecto dentro de la organización
+In this way, you can use this open-source plataform in any organization
 
-Como cualquier librería de maven, lo primero es determinar de donde va a obtener las apis.
+Like any maven library, you have to put where the maven repository was in order to find your library dependecies (pom configuration).
 
-Dentro de la configuración de la aplicación direccionamos el repositorio maven:
+Add the full `maven-repository` url, which can be found into the dashboqard, into gradle files:
 
 ```gradle
 repositories {
@@ -146,16 +135,15 @@ repositories {
 }
 ```
 
-y cambiamos la dependencia de nuestra librería a la del repositorio:
-
+Add gradle dependency
 ```sh
-//compile project(':api')
-compile 'fudi.freddy.api:api:1.0.a'
+//implementation project(':api')
+implementation 'fudi.freddy.api:api:1.0.a'
 ```
 
 ### License
 ```
-Copyright 2018 Romell D.Z.
+Copyright 2016 Romell D.Z.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -170,4 +158,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-**2018**
+**2016**
+
+<style>
+img[src*='#center'] { 
+    width:500px;
+    display: block;
+    margin: auto;
+}
+</style>
