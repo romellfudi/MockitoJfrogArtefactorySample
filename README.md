@@ -1,7 +1,7 @@
 # Mockito Android Project
 
 ### by Romell Domínguez
-[![](snapshot/icono.png)](https://www.romellfudi.com/)
+[![](https://raw.githubusercontent.com/romellfudi/assets/master/favicon.ico)](https://www.romellfudi.com/)
 
 First at all, begin configuring our testing environment.
 
@@ -143,7 +143,7 @@ implementation 'fudi.freddy.api:api:1.0.a'
 
 ### License
 ```
-Copyright 2016 Romell D.Z.
+Copyright 2015 Romell D.Z.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
