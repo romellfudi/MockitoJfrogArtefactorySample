@@ -1,3 +1,5 @@
+![Gemini_Generated_Image_es36myes36myes36](https://github.com/user-attachments/assets/75a84ae9-8eb5-4805-9787-948b5e495991)
+
 # Mockito Android Project
 
 ### by Romell Domínguez
